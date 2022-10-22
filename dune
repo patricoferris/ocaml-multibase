@@ -1,0 +1,4 @@
+(mdx
+ (files README.md)
+ (packages multibase)
+ (preludes ./test/prelude.txt))

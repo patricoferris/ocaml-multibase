@@ -1,0 +1,3 @@
+[submodule "vendor/multibase"]
+	path = vendor/multibase
+	url = https://github.com/multiformats/multibase

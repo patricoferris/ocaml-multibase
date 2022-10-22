@@ -1,0 +1,35 @@
+opam-version: "2.0"
+synopsis: "Self-describing base encodings"
+description:
+  "This library provides self-describing base encodings include Base32, Base58 and Base64"
+maintainer: ["patrick@sirref.org"]
+authors: ["patrick@sirref.org"]
+license: "MIT"
+homepage: "https://github.com/patricoferris/ocaml-multibase"
+bug-reports: "https://github.com/patricoferris/ocaml-multibase/issues"
+depends: [
+  "ocaml" {>= "4.03.0"}
+  "dune" {>= "2.9"}
+  "alcotest" {with-test}
+  "mdx" {with-test}
+  "base64"
+  "optint"
+  "odoc" {with-doc}
+]
+build: [
+  ["dune" "subst"] {dev}
+  [
+    "dune"
+    "build"
+    "-p"
+    name
+    "-j"
+    jobs
+    "--promote-install-files=false"
+    "@install"
+    "@runtest" {with-test}
+    "@doc" {with-doc}
+  ]
+  ["dune" "install" "-p" name "--create-install-files" name]
+]
+dev-repo: "git+https://github.com/patricoferris/ocaml-multibase.git"

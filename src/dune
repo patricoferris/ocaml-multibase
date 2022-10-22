@@ -1,0 +1,27 @@
+; ;  Uncomment to generate multicodec then reformat
+
+; (executable
+;  (name gen)
+;  (modules gen)
+;  (libraries fmt))
+
+; (rule
+;  (deps
+;   gen.exe
+;   (file %{project_root}/vendor/multibase/multibase.csv))
+;  (targets encoding.ml encoding.mli)
+;  (mode promote)
+;  (action
+;   (progn
+;    (with-stdout-to
+;     encoding.ml
+;     (run ./gen.exe ml %{project_root}/vendor/multibase/multibase.csv))
+;    (with-stdout-to
+;     encoding.mli
+;     (run ./gen.exe mli %{project_root}/vendor/multibase/multibase.csv)))))
+
+(library
+ (name multibase)
+ (modules base58 base32 multibase multibase_intf encoding)
+ (public_name multibase)
+ (libraries base64 optint))
