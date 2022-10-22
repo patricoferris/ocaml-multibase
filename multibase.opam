@@ -8,7 +8,7 @@ license: "MIT"
 homepage: "https://github.com/patricoferris/ocaml-multibase"
 bug-reports: "https://github.com/patricoferris/ocaml-multibase/issues"
 depends: [
-  "ocaml" {>= "4.03.0"}
+  "ocaml" {>= "4.08.0"}
   "dune" {>= "2.9"}
   "alcotest" {with-test}
   "mdx" {with-test}
